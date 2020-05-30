@@ -1,17 +1,25 @@
 from flask import Flask,request,url_for,redirect,render_template
 from lib.on import get_price
 from functools import wraps
+import os
 app = Flask(__name__)
 
 def link_verify(func):
     @wraps(func)
     def verfication():
-        if request.host == 'kgwz6rkpnknsuw7o.onion':
+        get = os.popen('cat /var/lib/tor/hidden_service/hostname')
+        out = get.read().replace('\n','')
+        if request.host == out:
             return verfication
         else:
             return 'It Works'
     return verfication
 
+@app.route('/link')
+def get_link():
+    get = os.popen('cat /var/lib/tor/hidden_service/hostname')
+    out = get.read()
+    return out
 
 
 @app.route('/')
