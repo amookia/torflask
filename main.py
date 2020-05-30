@@ -10,9 +10,9 @@ def link_verify(func):
         get = os.popen('cat /var/lib/tor/hidden_service/hostname')
         out = get.read().replace('\n','')
         if request.host == out:
-            return verfication
+            return func()
         else:
-            return 'It Works'
+            return 'It works'
     return verfication
 
 @app.route('/link')
