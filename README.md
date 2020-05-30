@@ -1,4 +1,7 @@
 # torflask
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
+
 *Flask 🌶️ | Tor 🧅 | Gunicorn🦄  | Docker🐳*
 
 # Installation
